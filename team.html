@@ -4,7 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us | UQ Guts</title>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+</style>
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          lavender: {
+            50: '#F5F3FC',
+            100: '#EDE9F9',
+            200: '#DCD3F3',
+            300: '#C3B2EA',
+            400: '#A88EDE',
+            500: '#8F6FD1',
+            600: '#7857BD',
+            700: '#63479C',
+          }
+        },
+        fontFamily: {
+          serif: ['Georgia', 'Cambria', "Times New Roman", 'Times', 'serif'],
+        }
+      }
+    }
+  }
+</script>
 <link rel="icon" type="image/png" href="images/guts_logo.png">
 </head>
 <body class="bg-white text-gray-900">
@@ -18,22 +45,60 @@
         <img src="images/guts_logo.png" alt="UQ Guts Logo" class="h-8 w-auto">
       </a>
 
-      <!-- Desktop nav links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm text-gray-700">
-        <a href="index.html" class="hover:text-gray-900">Home</a>
-        <a href="about.html" class="hover:text-gray-900">About</a>
-        <a href="events.html" class="hover:text-gray-900">Events</a>
-        <a href="join.html" class="hover:text-gray-900">Join</a>
-        <a href="#contact" class="hover:text-gray-900">Contact</a>
-      </nav>
+    
+    <!-- Desktop nav links -->
+    <nav class="hidden md:flex items-center gap-8 text-sm text-gray-700">
+    <a href="index.html" class="hover:text-gray-900">Home</a>
+
+    <!-- About dropdown -->
+    <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-gray-900 py-6">
+        About
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="transition-transform group-hover:rotate-180"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="absolute top-full left-0 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+        <a href="about.html" class="block px-4 py-2 text-sm hover:bg-gray-50">About Us</a>
+        <a href="team.html" class="block px-4 py-2 text-sm hover:bg-gray-50">Our Team</a>
+        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-50">Sponsorships</a>
+        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-50">FAQ</a>
+        </div>
+    </div>
+
+    <!-- Events dropdown -->
+    <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-gray-900 py-6">
+        Events
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="transition-transform group-hover:rotate-180"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="absolute top-full left-0 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-50">Timeline</a>
+        <a href="events.html" class="block px-4 py-2 text-sm hover:bg-gray-50">Upcoming Events</a>
+        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-50">Gallery</a>
+        </div>
+    </div>
+
+    <!-- Join dropdown -->
+    <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-gray-900 py-6">
+        Join
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="transition-transform group-hover:rotate-180"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="absolute top-full left-0 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+        <a href="join_membership.html" class="block px-4 py-2 text-sm hover:bg-gray-50">Membership</a>
+        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-50">Committee</a>
+        </div>
+    </div>
+
+    <a href="#contact" class="hover:text-gray-900">Contact</a>
+    </nav>
 
       <!-- Desktop CTA -->
-      <a href="#join" class="hidden md:inline-flex items-center bg-gray-900 text-white text-sm px-5 py-2.5 rounded-full hover:bg-gray-800 transition">
+      <a href="join_membership.html" class="hidden md:inline-flex items-center bg-lavender-300 text-white text-sm px-5 py-2.5 rounded-full hover:bg-gray-800 transition">
         Membership
       </a>
 
       <!-- Mobile hamburger -->
-      <button id="menu-btn" class="md:hidden p-2 -mr-2 rounded-full border border-gray-300 text-gray-700" aria-label="Open menu">
+      <button id="menu-btn" class="md:hidden p-2 -mr-2 rounded-full border bg-lavender-300 text-white" aria-label="Open menu">
         <svg id="icon-open" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
         <svg id="icon-close" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="hidden"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
@@ -42,21 +107,22 @@
 
   <!-- Mobile menu panel -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
-    <nav class="flex flex-col px-5 py-3 text-sm text-gray-700 divide-y divide-gray-100">
-      <a href="index.html" class="py-3">Home</a>
-      <a href="about.html" class="py-3">About</a>
-      <a href="events.html" class="py-3">Events</a>
-      <a href="join.html" class="py-3">Join</a>
-      <a href="#contact" class="py-3">Contact</a>
-      <a href="join.html" class="mt-3 mb-2 inline-flex justify-center bg-gray-900 text-white px-5 py-2.5 rounded-full">Membership</a>
-    </nav>
-  </div>
+  <nav class="flex flex-col px-5 py-3 text-sm text-gray-700 divide-y divide-gray-100">
+    <a href="index.html" class="py-3">Home</a>
+    <a href="about.html" class="py-3">About Us</a>
+    <a href="team.html" class="py-3">Our Team</a>
+    <a href="events.html" class="py-3">Upcoming Events</a>
+    <a href="join_membership.html" class="py-3">Membership</a>
+    <a href="#contact" class="py-3">Contact</a>
+    <a href="join_membership.html" class="mt-3 mb-2 inline-flex justify-center bg-lavender-300 text-white px-5 py-2.5 rounded-full">Membership</a>
+  </nav>
+</div>
 </header>
 
 
 
 <!-- PAGE HEADER -->
-<div class="bg-gray-200 py-16 sm:py-20">
+<div class="bg-lavender-300 text-white py-16 sm:py-20">
   <h1 class="font-serif text-4xl sm:text-5xl text-center">Our Team</h1>
 </div>
 
@@ -69,17 +135,17 @@
     <!-- Executive Committee -->
     <div class="flex flex-wrap justify-center gap-8 mb-16">
         <div class="text-center w-full sm:w-[calc(25%-1.5rem)]">
-            <img src="images/president.jpg" alt="President" class="w-full aspect-square object-cover rounded-md">
+            <img src="images/team/president.jpg" alt="President" class="w-full aspect-square object-cover rounded-md">
             <p class="mt-3 font-medium">Max</p>
             <p class="text-sm italic text-gray-500">President</p>
         </div>
         <div class="text-center w-full sm:w-[calc(25%-1.5rem)]">
-            <img src="images/secretary.jpg" alt="Secretary" class="w-full aspect-square object-cover rounded-md">
+            <img src="images/team/secretary.jpg" alt="Secretary" class="w-full aspect-square object-cover rounded-md">
             <p class="mt-3 font-medium">Katherine</p>
             <p class="text-sm italic text-gray-500">Secretary</p>
         </div>
         <div class="text-center w-full sm:w-[calc(25%-1.5rem)]">
-            <img src="images/treasurer.jpg" alt="Treasurer" class="w-full aspect-square object-cover rounded-md">
+            <img src="images/team/treasurer.jpg" alt="Treasurer" class="w-full aspect-square object-cover rounded-md">
             <p class="mt-3 font-medium">Henry</p>
             <p class="text-sm italic text-gray-500">Treasurer</p>
         </div>
@@ -90,19 +156,19 @@
       <h3 class="font-medium mb-6">Director of Event &amp; Activities</h3>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
         <div class="text-center">
-          <img src="images/director-events-1.jpg" alt="Director of Events" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/director-events-1.jpg" alt="Director of Events" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Lisa</p>
         </div>
         <div class="text-center">
-          <img src="images/director-events-2.jpg" alt="Director of Events" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/director-events-2.jpg" alt="Director of Events" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Diane</p>
         </div>
         <div class="text-center">
-          <img src="images/director-events-3.jpg" alt="Director of Events" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/director-events-3.jpg" alt="Director of Events" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Zoey</p>
         </div>
         <div class="text-center">
-          <img src="images/director-events-4.jpg" alt="Director of Events" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/director-events-4.jpg" alt="Director of Events" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Max</p>
         </div>
       </div>
@@ -116,20 +182,20 @@
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
         <div class="text-center">
-          <img src="images/public-relations-1.jpg" alt="Public Relations" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/public-relations-1.jpg" alt="Public Relations" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Hannah</p>
           <p class="text-sm italic text-gray-500">Director</p>
         </div>
         <div class="text-center">
-          <img src="images/public-relations-2.jpg" alt="Public Relations" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/public-relations-2.jpg" alt="Public Relations" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Diane</p>
         </div>
         <div class="text-center">
-          <img src="images/public-relations-3.jpg" alt="Public Relations" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/public-relations-3.jpg" alt="Public Relations" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Lisa</p>
         </div>
         <div class="text-center">
-          <img src="images/photographer.jpg" alt="Photographer" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/photographer.jpg" alt="Photographer" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Aurora</p>
         </div>
       </div>
@@ -143,21 +209,21 @@
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
         <div class="text-center">
-          <img src="images/social-media-1.jpg" alt="Social Media Manager" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/social-media-1.jpg" alt="Social Media Manager" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Yanice</p>
           <p class="text-sm italic text-gray-500">Director</p>
         </div>
         <div class="text-center">
-          <img src="images/social-media-2.jpg" alt="Social Media Manager" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/social-media-2.jpg" alt="Social Media Manager" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Ella</p>
         </div>
         <div class="text-center">
-          <img src="images/reels-team-1.jpg" alt="Reels Team" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/reels-team-1.jpg" alt="Reels Team" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Patricia</p>
           <p class="text-sm italic text-gray-500">Director</p>
         </div>
         <div class="text-center">
-          <img src="images/reels-team-2.jpg" alt="Reels Team" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/reels-team-2.jpg" alt="Reels Team" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Medy</p>
         </div>
       </div>
@@ -168,16 +234,16 @@
       <h3 class="font-medium mb-6">Graphic Designer</h3>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
         <div class="text-center">
-          <img src="images/graphic-designer-1.jpg" alt="Graphic Designer" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/graphic-designer-1.jpg" alt="Graphic Designer" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Rachel</p>
           <p class="text-sm italic text-gray-500">Director</p>
         </div>
         <div class="text-center">
-          <img src="images/graphic-designer-2.jpg" alt="Graphic Designer" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/graphic-designer-2.jpg" alt="Graphic Designer" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Sophia</p>
         </div>
         <div class="text-center">
-          <img src="images/graphic-designer-3.jpg" alt="Graphic Designer" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/graphic-designer-3.jpg" alt="Graphic Designer" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Chris</p>
         </div>
       </div>
@@ -188,16 +254,16 @@
       <h3 class="font-medium mb-6">Information Manager</h3>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
         <div class="text-center">
-          <img src="images/information-manager-1.jpg" alt="Information Manager" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/information-manager-1.jpg" alt="Information Manager" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Francisca</p>
           <p class="text-sm italic text-gray-500">Director</p>
         </div>
         <div class="text-center">
-          <img src="images/information-manager-2.jpg" alt="Information Manager" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/information-manager-2.jpg" alt="Information Manager" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Andy</p>
         </div>
         <div class="text-center">
-          <img src="images/information-manager-3.jpg" alt="Information Manager" class="w-full aspect-square object-cover rounded-md">
+          <img src="images/team/information-manager-3.jpg" alt="Information Manager" class="w-full aspect-square object-cover rounded-md">
           <p class="mt-3 font-medium">Yanice</p>
         </div>
       </div>
@@ -205,10 +271,10 @@
 
     <!-- CTA banner -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center bg-gray-50 rounded-lg p-8">
-      <img src="images/team-cta.jpg" alt="Join the team" class="w-full aspect-[4/3] object-cover rounded-md">
+      <img src="images/team/team-cta.jpg" alt="Join the team" class="w-full aspect-[4/3] object-cover rounded-md">
       <div class="text-center sm:text-left">
         <p class="text-lg font-medium mb-4">You can be part of us!</p>
-        <a href="join.html" class="inline-block bg-gray-300 text-gray-900 px-6 py-3 rounded-md text-sm font-medium hover:bg-gray-400 transition">Join Us</a>
+        <a href="join_membership.html" class="inline-block bg-lavender-300 text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-lavender-500 text-white transition">Join Us</a>
       </div>
     </div>
 
@@ -226,16 +292,16 @@
         <h3 class="font-serif text-lg">Contact</h3>
         <p class="mt-3 text-sm text-gray-500">Get in touch or drop us a line: guts.uq@gmail.com</p>
         <div class="mt-5 flex gap-3">
-          <a href="https://www.instagram.com/guts.uq/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition">
+          <a href="https://www.instagram.com/guts.uq/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-lavender-300 text-white flex items-center justify-center hover:bg-lavender-400 transition">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
           </a>
-          <a href="https://www.facebook.com/UQGUTS/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition">
+          <a href="https://www.facebook.com/UQGUTS/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-full bg-lavender-300 text-white flex items-center justify-center hover:bg-lavender-400 transition">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1z"/></svg>
           </a>
-          <a href="https://au.linkedin.com/company/uq-guts" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition">
+          <a href="https://au.linkedin.com/company/uq-guts" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-lavender-300 text-white flex items-center justify-center hover:bg-lavender-400 transition">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><path d="M8 11v6M12 11v6M12 13.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5V17"/></svg>
           </a>
-          <a href="https://www.threads.com/@guts.uq" target="_blank" rel="noopener noreferrer" aria-label="Threads" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition">
+          <a href="https://www.threads.com/@guts.uq" target="_blank" rel="noopener noreferrer" aria-label="Threads" class="w-9 h-9 rounded-full bg-lavender-300 text-white flex items-center justify-center hover:bg-lavender-400 transition">
             <svg width="16" height="16" viewBox="-10 -10 212 224" fill="currentColor"><path d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.6942 44.745C97.5762 44.7443 97.4591 44.7443 97.3421 44.7443C82.4194 44.7443 70.0245 51.1409 62.4501 62.7807L75.6046 71.6802C81.2531 62.968 90.181 61.1616 97.3527 61.1616C97.4372 61.1616 97.5205 61.1616 97.6032 61.1622C106.507 61.216 113.226 63.7776 117.581 68.775C120.767 72.4331 122.892 77.4991 123.939 83.9159C115.995 82.5723 107.395 82.1610 98.204 82.6801C72.3132 84.1409 55.6414 99.478 56.7663 120.859C57.337 131.68 62.7737 140.982 71.9762 147.02C79.7194 152.096 89.7182 154.576 100.106 153.999C113.843 153.238 124.6 147.972 132.084 138.347C137.759 131.049 141.354 121.622 142.951 109.611C149.529 113.598 154.394 118.847 157.075 125.183C161.617 135.916 161.886 153.639 147.482 168.032C134.859 180.645 119.688 186.151 97.0135 186.318C71.8351 186.132 52.7418 178.061 40.2743 162.323C28.6018 147.585 22.5714 126.279 22.3459 98.9982C22.5714 71.7182 28.6018 50.4122 40.2743 35.6738C52.7418 19.9366 71.8351 11.8657 97.0135 11.6801C122.372 11.8674 141.799 19.976 154.756 35.7823C161.106 43.5289 165.906 53.2455 169.028 64.5613L185 60.0369C181.187 46.135 175.213 34.1223 167.128 24.2683C150.638 4.2004 126.577 -6.20395 97.0623 -6.4143H97.0135H96.9647C67.4499 -6.2043 43.3891 4.198 26.8988 24.2634C12.256 42.0644 4.7051 66.6002 4.436 98.5798L4.4342 98.9982L4.436 99.4166C4.7051 131.396 12.256 155.932 26.8988 173.733C43.3891 193.798 67.4499 204.202 96.9647 204.412H97.0135H97.0623C124.913 204.216 144.591 196.982 160.906 180.699C182.246 159.361 181.617 132.6 174.639 116.522C169.617 104.976 160.036 95.6167 145.836 88.9883H141.537ZM99.1349 137.6C87.9351 138.207 76.3011 133.147 75.7215 122.549C75.2913 114.71 81.3011 105.997 99.1651 104.977C101.204 104.86 103.204 104.804 105.163 104.804C111.766 104.804 117.943 105.463 123.548 106.723C121.463 132.302 109.418 137.036 99.1349 137.6Z"/></svg>
           </a>
         </div>
@@ -266,7 +332,7 @@
       <div>
         <h4 class="font-medium text-sm">Join</h4>
         <ul class="mt-4 space-y-3 text-sm text-gray-500">
-          <li><a href="join.html" class="hover:text-gray-800">Membership</a></li>
+          <li><a href="join_membership.html" class="hover:text-gray-800">Membership</a></li>
           <li><a href="#" class="hover:text-gray-800">Committee</a></li>
         </ul>
       </div>
